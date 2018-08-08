@@ -23,6 +23,10 @@
 		BF691524211A25BF00C5CFE3 /* UITableView+AutoSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF691523211A25BF00C5CFE3 /* UITableView+AutoSize.swift */; };
 		BF691529211A262600C5CFE3 /* MetroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF691527211A262600C5CFE3 /* MetroService.swift */; };
 		BF69152A211A262600C5CFE3 /* MetroAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF691528211A262600C5CFE3 /* MetroAPI.swift */; };
+		BF69152C211A5B2700C5CFE3 /* RouteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69152B211A5B2600C5CFE3 /* RouteListTableViewCell.swift */; };
+		BF69152E211A5E6000C5CFE3 /* RouteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69152D211A5E6000C5CFE3 /* RouteDetailViewController.swift */; };
+		BF691530211A630600C5CFE3 /* MetroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69152F211A630500C5CFE3 /* MetroController.swift */; };
+		BF691532211A653200C5CFE3 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF691531211A653200C5CFE3 /* Route.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		BF691523211A25BF00C5CFE3 /* UITableView+AutoSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+AutoSize.swift"; sourceTree = "<group>"; };
 		BF691527211A262600C5CFE3 /* MetroService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MetroService.swift; path = MetroSystemMap/Source/Services/MetroService.swift; sourceTree = SOURCE_ROOT; };
 		BF691528211A262600C5CFE3 /* MetroAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MetroAPI.swift; path = MetroSystemMap/Source/Services/MetroAPI.swift; sourceTree = SOURCE_ROOT; };
+		BF69152B211A5B2600C5CFE3 /* RouteListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteListTableViewCell.swift; sourceTree = "<group>"; };
+		BF69152D211A5E6000C5CFE3 /* RouteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteDetailViewController.swift; sourceTree = "<group>"; };
+		BF69152F211A630500C5CFE3 /* MetroController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroController.swift; sourceTree = "<group>"; };
+		BF691531211A653200C5CFE3 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,7 @@
 		BF69150D211A235800C5CFE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF69152B211A5B2600C5CFE3 /* RouteListTableViewCell.swift */,
 				BF69151A211A249600C5CFE3 /* CardView.swift */,
 			);
 			path = Views;
@@ -135,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				BF6914F9211A10D500C5CFE3 /* RouteListViewController.swift */,
+				BF69152D211A5E6000C5CFE3 /* RouteDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -142,6 +152,7 @@
 		BF69150F211A239300C5CFE3 /* DataModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BF69152F211A630500C5CFE3 /* MetroController.swift */,
 			);
 			path = DataModelControllers;
 			sourceTree = "<group>";
@@ -149,6 +160,7 @@
 		BF691510211A23BD00C5CFE3 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				BF691531211A653200C5CFE3 /* Route.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -269,7 +281,11 @@
 				BF691518211A246600C5CFE3 /* UIView+Shadow.swift in Sources */,
 				BF691524211A25BF00C5CFE3 /* UITableView+AutoSize.swift in Sources */,
 				BF6914FA211A10D500C5CFE3 /* RouteListViewController.swift in Sources */,
+				BF69152C211A5B2700C5CFE3 /* RouteListTableViewCell.swift in Sources */,
 				BF691519211A246600C5CFE3 /* String+PercentageEncoding.swift in Sources */,
+				BF691530211A630600C5CFE3 /* MetroController.swift in Sources */,
+				BF69152E211A5E6000C5CFE3 /* RouteDetailViewController.swift in Sources */,
+				BF691532211A653200C5CFE3 /* Route.swift in Sources */,
 				BF6914F8211A10D500C5CFE3 /* AppDelegate.swift in Sources */,
 				BF69151E211A250A00C5CFE3 /* ImageLoader.swift in Sources */,
 				BF691520211A254E00C5CFE3 /* API.swift in Sources */,

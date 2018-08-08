@@ -9,5 +9,5 @@
 import Foundation
 
 class MetroAPI : API  {
-    let baseURL = URL(string: "http://api.metro.net/agencies/lametro")!
+    let baseURL = URL(string: "https://api.metro.net/agencies/lametro/")!
 }
