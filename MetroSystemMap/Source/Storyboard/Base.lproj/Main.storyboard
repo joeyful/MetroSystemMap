@@ -168,13 +168,27 @@
                                         <rect key="frame" x="10" y="10" width="330" height="612"/>
                                         <subviews>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="h9P-y0-0fR">
-                                                <rect key="frame" x="0.0" y="0.0" width="330" height="474"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="330" height="440"/>
                                             </mapView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jy7-OO-xeK">
-                                                <rect key="frame" x="0.0" y="474" width="330" height="30"/>
+                                                <rect key="frame" x="0.0" y="440" width="330" height="64"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4L8-RU-hbY">
+                                                        <rect key="frame" x="0.0" y="10" width="330" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="DxG-8c-7gv"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="dhI-R4-3EB"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4L8-RU-hbY" secondAttribute="trailing" id="G0R-MV-AjG"/>
+                                                    <constraint firstAttribute="bottom" secondItem="4L8-RU-hbY" secondAttribute="bottom" constant="10" id="OR6-aq-S9D"/>
+                                                    <constraint firstItem="4L8-RU-hbY" firstAttribute="leading" secondItem="jy7-OO-xeK" secondAttribute="leading" id="baC-Aj-aze"/>
+                                                    <constraint firstItem="4L8-RU-hbY" firstAttribute="top" secondItem="jy7-OO-xeK" secondAttribute="top" constant="10" id="dxN-QO-oYg"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EU1-BT-BKl">
@@ -254,6 +268,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="h8X-gJ-ndi"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="backButton" destination="Z10-1B-pII" id="oZp-sz-rHl"/>
+                        <outlet property="mapView" destination="h9P-y0-0fR" id="WGa-Xg-a2d"/>
+                        <outlet property="nameLabel" destination="4L8-RU-hbY" id="0t2-gM-Pra"/>
+                        <outlet property="refreshButton" destination="Dbd-F2-XLa" id="oD4-TA-baL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bqb-Uu-fb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

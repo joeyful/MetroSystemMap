@@ -56,10 +56,10 @@ private extension RouteListViewController {
 
 // MARK: - UITableViewDataSource
 
-extension RouteListViewController: UITableViewDataSource {
+extension RouteListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return metroController.listCount
+        return metroController.routeCount
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

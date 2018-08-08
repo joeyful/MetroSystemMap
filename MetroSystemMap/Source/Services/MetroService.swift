@@ -22,6 +22,29 @@ class MetroService {
         self.init(api: MetroAPI())
     }
     
+    func vehicles(id: String, retryCount: Int = 3, responseQueue: DispatchQueue = .main, success :  @escaping (VehicleResponse)->Void, error errorCallback:  @escaping (String) -> Void)  {
+        
+        let request = APIRequest(.get, path: "routes/\(id)/vehicles")
+        
+        api.send(request, success: { (result, url) in
+            responseQueue.async {
+                success(result)
+            }
+        }, error: { [weak self] error in
+            guard let StrongSelf = self else { return }
+            if retryCount < StrongSelf.connectionRetryLimit {
+                DispatchQueue.main.asyncAfter(deadline: .now() + StrongSelf.retryTimeInterval(forRetryCount: retryCount)) {
+                    StrongSelf.vehicles(id: id, retryCount: retryCount + 1, responseQueue: responseQueue, success: success, error: errorCallback)
+                }
+            } else {
+                responseQueue.async {
+                    errorCallback(error)
+                }
+            }
+        })
+        
+    }
+    
     func route(retryCount: Int = 3, responseQueue: DispatchQueue = .main, success: @escaping (RouteResponse) -> Void, error errorCallback: @escaping (String) -> Void) {
         
         let request = APIRequest(.get, path: "routes")

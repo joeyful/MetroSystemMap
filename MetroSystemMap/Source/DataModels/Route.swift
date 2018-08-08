@@ -2,7 +2,7 @@
 //  Route.swift
 //  MetroSystemMap
 //
-//  Created by Joey Wei on 8/7/18.
+//  Created by Joey Wei on 3/29/18.
 //  Copyright © 2018 Joey Wei. All rights reserved.
 //
 
@@ -18,11 +18,11 @@ struct RouteResponse : Codable {
 
 struct Route : Codable {
     
-    let uid : String?
+    let id : String?
     let name : String?
     
     enum CodingKeys: String, CodingKey {
-        case uid = "id"
+        case id
         case name = "display_name"
     }
 }

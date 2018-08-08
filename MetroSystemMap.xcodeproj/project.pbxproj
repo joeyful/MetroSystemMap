@@ -27,6 +27,7 @@
 		BF69152E211A5E6000C5CFE3 /* RouteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69152D211A5E6000C5CFE3 /* RouteDetailViewController.swift */; };
 		BF691530211A630600C5CFE3 /* MetroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69152F211A630500C5CFE3 /* MetroController.swift */; };
 		BF691532211A653200C5CFE3 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF691531211A653200C5CFE3 /* Route.swift */; };
+		BF691534211AABF100C5CFE3 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF691533211AABF100C5CFE3 /* Vehicle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		BF69152D211A5E6000C5CFE3 /* RouteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteDetailViewController.swift; sourceTree = "<group>"; };
 		BF69152F211A630500C5CFE3 /* MetroController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroController.swift; sourceTree = "<group>"; };
 		BF691531211A653200C5CFE3 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		BF691533211AABF100C5CFE3 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				BF691531211A653200C5CFE3 /* Route.swift */,
+				BF691533211AABF100C5CFE3 /* Vehicle.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF691534211AABF100C5CFE3 /* Vehicle.swift in Sources */,
 				BF69151B211A249600C5CFE3 /* CardView.swift in Sources */,
 				BF691516211A246600C5CFE3 /* UIView+Fade.swift in Sources */,
 				BF691518211A246600C5CFE3 /* UIView+Shadow.swift in Sources */,
