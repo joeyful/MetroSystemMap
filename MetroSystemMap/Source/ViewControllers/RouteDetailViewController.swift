@@ -44,6 +44,7 @@ class RouteDetailViewController: UIViewController {
         super.viewDidLoad()
         setupUserInterface()
     }
+    
 }
 
 
@@ -60,7 +61,7 @@ private extension RouteDetailViewController {
     }
     
     func loadMap(_ id: String) {
-        metroController.loadMap(for: id, success: { [weak self] in
+        metroController.loadVehicles(for: id, success: { [weak self] in
             guard let StrongSelf = self else { return }
             StrongSelf.noVehicleLabel.isHidden = StrongSelf.metroController.vehicleCount > 0
             StrongSelf.centerMap(on: StrongSelf.metroController.center, regionRadius: StrongSelf.metroController.regionRadius)

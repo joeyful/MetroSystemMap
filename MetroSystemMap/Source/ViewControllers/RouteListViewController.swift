@@ -33,7 +33,7 @@ private extension RouteListViewController {
     
     func loadList() {
         loadingGuardView?.fadeIn()
-        metroController.loadList(success: { [weak self] in
+        metroController.loadRoutes(success: { [weak self] in
             guard let StrongSelf = self else { return }
             StrongSelf.tableView?.reloadData()
             StrongSelf.loadingGuardView?.fadeOut()

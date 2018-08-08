@@ -16,6 +16,7 @@ protocol API {
 }
 
 extension API {
+    
     private var session : URLSession {
         
         let configuration = URLSessionConfiguration.default
@@ -32,28 +33,26 @@ extension API {
         }, error: errorCallback)
     }
     
-    private func send(_ request: APIRequest, success: @escaping (Data, URL) -> Void, error errorBlock :@escaping (String) -> Void) {
+    private func send(_ request: APIRequest, success: @escaping (Data, URL) -> Void, error errorCallback :@escaping (String) -> Void) {
         
         guard let urlRequest = request.urlRequest(base: baseURL), let fullURL = urlRequest.url else {
-            DispatchQueue.main.async {
-                errorBlock("NetworkError.invalidURL")
-            }
+            errorCallback("Network Error: Invalid URL")
             return
         }
         
         let task = session.dataTask(with: urlRequest) { (data, response, error) in
             
             if let error = error {
-                errorBlock(error.localizedDescription)
+                errorCallback(error.localizedDescription)
             }
             else if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode >= 400 {
-                errorBlock("NetworkError.httpError: \(httpResponse.statusCode)")
+                errorCallback("HTTP Error: \(httpResponse.statusCode)")
             }
             else if let data = data {
                 success(data, fullURL)
             }
             else {
-                errorBlock("NetworkError.noData")
+                errorCallback("Network Error: No data is returned")
             }
         }
         
@@ -62,13 +61,11 @@ extension API {
     
     private func decode<T : Decodable>(data: Data, url : URL, success : @escaping (T, URL) -> Void, error errorCallback: @escaping (String) -> Void) {
         do {
-            
-            let result = try JSONDecoder() .decode(T.self, from: data)
-            
+            let result = try JSONDecoder().decode(T.self, from: data)
             success(result, url)
         }
         catch (_) {
-            errorCallback("ParserError.invalidFormat")
+            errorCallback("Parse Error: Invalid Data Format")
         }
     }
 }

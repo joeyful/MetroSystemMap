@@ -16,7 +16,6 @@ class RouteListTableViewCell: UITableViewCell {
         }
     }
     
-    // MARK: - Outlets
     @IBOutlet private weak var titleLabel : UILabel!
 
 }

@@ -20,9 +20,9 @@ class RoundButton: UIButton {
         }
     }
     
-    fileprivate let activityIndicatorView = UIActivityIndicatorView()
+    private let activityIndicatorView = UIActivityIndicatorView()
     
-    fileprivate var enabledBackgroundColor : UIColor = .orange
+    private var enabledBackgroundColor : UIColor = .orange
     
     override func awakeFromNib() {
         
@@ -38,7 +38,6 @@ class RoundButton: UIButton {
         setTitleColor(.darkGray, for: .disabled)
         setImage(nil, for: .disabled)
         
-        activityIndicatorView.frame = bounds
         activityIndicatorView.activityIndicatorViewStyle = .white
         activityIndicatorView.hidesWhenStopped = true
         activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
@@ -50,27 +49,27 @@ class RoundButton: UIButton {
         buttonState = isEnabled ? .enabled : .disabled
     }
     
-    fileprivate func showEnabledState() {
+    private func showEnabledState() {
         activityIndicatorView.stopAnimating()
         backgroundColor = enabledBackgroundColor
         showShadow()
     }
     
-    fileprivate func showDisabledState() {
+    private func showDisabledState() {
         activityIndicatorView.stopAnimating()
         setTitle(title(for: .normal), for: .disabled)  // use normal title for disabled state
         backgroundColor = .lightGray
         hideShadow()
     }
     
-    fileprivate func showInProgressState() {
+    private func showInProgressState() {
         activityIndicatorView.startAnimating()
         setTitle("", for: .disabled) // hide title
         backgroundColor = enabledBackgroundColor
         showShadow()
     }
     
-    fileprivate func updateButtonState() {
+    private func updateButtonState() {
         
         isEnabled = (buttonState == .enabled)
         

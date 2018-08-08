@@ -11,6 +11,8 @@ import MapKit
 
 final class MetroController {
     
+    // MARK: - Public Property
+
     var routeCount: Int {
         return routes.count
     }
@@ -38,6 +40,8 @@ final class MetroController {
         return max(distanceLong, distanceLat) * 1.2
     }
     
+    // MARK: - Read Only Property
+
     private(set) var routes = [Route]()
     
     private(set) var vehicles = [Vehicle]() {
@@ -46,6 +50,8 @@ final class MetroController {
         }
     }
     
+    // MARK: - Private Property
+
     private var maxLat = -90.0
     private var minLat = 90.0
     private var maxLong = -180.0
@@ -93,8 +99,8 @@ private extension MetroController {
 
 extension MetroController {
     
-    func loadList(success: @escaping () -> Void, error errorHandle: @escaping (String) -> Void) {
-        MetroController.shared.route(success: { [weak self] result in
+    func loadRoutes(success: @escaping () -> Void, error errorHandle: @escaping (String) -> Void) {
+        service.routes(success: { [weak self] result in
             guard let StrongSelf = self else { return }
             StrongSelf.routes = result.routes
             success()
@@ -103,27 +109,13 @@ extension MetroController {
         })
     }
     
-    func loadMap(for id: String, success: @escaping () -> Void, error errorHandle: @escaping (String) -> Void) {
-        MetroController.shared.vehicle(id: id, success: { [weak self] result in
+    func loadVehicles(for id: String, success: @escaping () -> Void, error errorHandle: @escaping (String) -> Void) {
+        service.vehicles(id: id, success: { [weak self] result in
             guard let StrongSelf = self else { return }
             StrongSelf.vehicles = result.vehicles
             success()
         }, error: { error in
             errorHandle(error)
         })
-    }
-}
-
-
-// MARK: - Private API
-
-private extension MetroController {
-    
-    func route(success : @escaping  (RouteResponse)->Void , error errorCallback : @escaping  (String) -> Void) {
-        service.route(success: success, error: errorCallback)
-    }
-    
-    func vehicle(id: String, success : @escaping  (VehicleResponse)->Void , error errorCallback : @escaping  (String) -> Void) {
-        service.vehicles(id: id, success: success, error: errorCallback)
     }
 }

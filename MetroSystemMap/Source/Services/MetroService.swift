@@ -22,7 +22,7 @@ class MetroService {
         self.init(api: MetroAPI())
     }
     
-    func vehicles(id: String, retryCount: Int = 0, responseQueue: DispatchQueue = .main, success :  @escaping (VehicleResponse)->Void, error errorCallback:  @escaping (String) -> Void)  {
+    func vehicles(id: String, retryCount: Int = 0, responseQueue: DispatchQueue = .main, success : @escaping (VehicleResponse)->Void, error errorCallback:  @escaping (String) -> Void)  {
         
         let request = APIRequest(.get, path: "routes/\(id)/vehicles")
         
@@ -33,7 +33,7 @@ class MetroService {
         }, error: { [weak self] error in
             guard let StrongSelf = self else { return }
             if retryCount < StrongSelf.connectionRetryLimit {
-                DispatchQueue.main.asyncAfter(deadline: .now() + StrongSelf.retryTimeInterval(forRetryCount: retryCount)) {
+                responseQueue.asyncAfter(deadline: .now() + StrongSelf.retryTimeInterval(forRetryCount: retryCount)) {
                     StrongSelf.vehicles(id: id, retryCount: retryCount + 1, responseQueue: responseQueue, success: success, error: errorCallback)
                 }
             } else {
@@ -42,10 +42,9 @@ class MetroService {
                 }
             }
         })
-        
     }
     
-    func route(retryCount: Int = 0, responseQueue: DispatchQueue = .main, success: @escaping (RouteResponse) -> Void, error errorCallback: @escaping (String) -> Void) {
+    func routes(retryCount: Int = 0, responseQueue: DispatchQueue = .main, success: @escaping (RouteResponse) -> Void, error errorCallback: @escaping (String) -> Void) {
         
         let request = APIRequest(.get, path: "routes")
         
@@ -56,8 +55,8 @@ class MetroService {
         }, error: { [weak self] error in
             guard let StrongSelf = self else { return }
             if retryCount < StrongSelf.connectionRetryLimit {
-                DispatchQueue.main.asyncAfter(deadline: .now() + StrongSelf.retryTimeInterval(forRetryCount: retryCount)) {
-                    StrongSelf.route(retryCount: retryCount + 1, responseQueue: responseQueue, success: success, error: errorCallback)
+                responseQueue.asyncAfter(deadline: .now() + StrongSelf.retryTimeInterval(forRetryCount: retryCount)) {
+                    StrongSelf.routes(retryCount: retryCount + 1, responseQueue: responseQueue, success: success, error: errorCallback)
                 }
             } else {
                 responseQueue.async {

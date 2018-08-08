@@ -10,7 +10,7 @@ import UIKit
 
 class CardView: UIView {
     
-    @IBInspectable var shadowed = true {
+    var shadowed = true {
         didSet {
             if shadowed {
                 showShadow()

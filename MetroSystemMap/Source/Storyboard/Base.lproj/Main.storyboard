@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,43 +30,34 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8h-W2-gih">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="337"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJ9-Q4-3wY" customClass="CardView" customModule="MetroSystemMap" customModuleProvider="target">
-                                                            <rect key="frame" x="15" y="20.5" width="345" height="296.5"/>
+                                                            <rect key="frame" x="15" y="10" width="345" height="80"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3vT-ep-7Or">
-                                                                    <rect key="frame" x="14.5" y="20.5" width="315.5" height="256"/>
+                                                                    <rect key="frame" x="14.5" y="20.5" width="315.5" height="39.5"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus" translatesAutoresizingMaskIntoConstraints="NO" id="eUW-Ip-M1L">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="39.5"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" secondItem="eUW-Ip-M1L" secondAttribute="height" id="bXZ-0H-ssR"/>
                                                                                 <constraint firstAttribute="width" constant="40" id="bh3-2J-Tnd"/>
+                                                                                <constraint firstAttribute="height" constant="40" id="d3i-ab-jWb"/>
                                                                             </constraints>
                                                                         </imageView>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJ1-2j-tu9">
-                                                                            <rect key="frame" x="256" y="0.0" width="8" height="256"/>
+                                                                            <rect key="frame" x="40" y="0.0" width="8" height="39.5"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="8" id="PQ8-I2-JIU"/>
                                                                             </constraints>
                                                                         </view>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pRm-7A-7fj">
-                                                                            <rect key="frame" x="264" y="0.0" width="51.5" height="256"/>
-                                                                            <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200 Echo Park- Exposition Park Via Alvar" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPu-UU-Bvt">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="51.5" height="256"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="rU2-Ea-0Gf"/>
-                                                                                    </constraints>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
-                                                                            </subviews>
-                                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        </stackView>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200 Echo Park- Exposition Park Via Alvar" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPu-UU-Bvt">
+                                                                            <rect key="frame" x="48" y="0.0" width="267.5" height="39.5"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </stackView>
@@ -83,8 +73,8 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.95549887420000001" green="0.95622259379999996" blue="0.95561093090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="pJ9-Q4-3wY" secondAttribute="bottom" constant="20" id="4fn-Pl-PIq"/>
-                                                        <constraint firstItem="pJ9-Q4-3wY" firstAttribute="top" secondItem="P8h-W2-gih" secondAttribute="top" constant="20" id="FCl-uS-vzG"/>
+                                                        <constraint firstAttribute="bottom" secondItem="pJ9-Q4-3wY" secondAttribute="bottom" constant="10" id="4fn-Pl-PIq"/>
+                                                        <constraint firstItem="pJ9-Q4-3wY" firstAttribute="top" secondItem="P8h-W2-gih" secondAttribute="top" constant="10" id="FCl-uS-vzG"/>
                                                         <constraint firstAttribute="trailing" secondItem="pJ9-Q4-3wY" secondAttribute="trailing" constant="15" id="RVg-mV-27c"/>
                                                         <constraint firstItem="pJ9-Q4-3wY" firstAttribute="centerY" secondItem="P8h-W2-gih" secondAttribute="centerY" id="Y7R-N2-OiA"/>
                                                         <constraint firstItem="pJ9-Q4-3wY" firstAttribute="centerX" secondItem="P8h-W2-gih" secondAttribute="centerX" id="lKi-Iv-Fdb"/>
