@@ -11,11 +11,12 @@ import MapKit
 
 final class MetroController {
     
-    let defaultLong = -118.2365021
-    let defaultLat  = 34.056219
-    
     var routeCount: Int {
         return routes.count
+    }
+    
+    var vehicleCount: Int {
+        return vehicles.count
     }
     
     var center :CLLocation {
@@ -24,16 +25,17 @@ final class MetroController {
     
     var regionRadius :CLLocationDistance {
         
-        guard vehicleCount > 0  else { return 50000 }
+        guard vehicleCount > 0  else { return defaultRadius }
         
-        let coordinateX0 = CLLocation(latitude: defaultLat, longitude: maxLong)
-        let coordinateX1 = CLLocation(latitude: defaultLat, longitude: minLong)
-        let distanceX = coordinateX0.distance(from: coordinateX1)
+        let coordinateMaxLong = CLLocation(latitude: defaultLat, longitude: maxLong)
+        let coordinateMinLong = CLLocation(latitude: defaultLat, longitude: minLong)
+        let distanceLong = coordinateMaxLong.distance(from: coordinateMinLong)
 
-        let coordinateY0 = CLLocation(latitude: maxLat, longitude: defaultLong)
-        let coordinateY1 = CLLocation(latitude: minLat, longitude: defaultLong)
-        let distanceY = coordinateY0.distance(from: coordinateY1)
-        return max(distanceX, distanceY) * 1.2
+        let coordinateMaxLat = CLLocation(latitude: maxLat, longitude: defaultLong)
+        let coordinateMinLat = CLLocation(latitude: minLat, longitude: defaultLong)
+        let distanceLat = coordinateMaxLat.distance(from: coordinateMinLat)
+        
+        return max(distanceLong, distanceLat) * 1.2
     }
     
     private(set) var routes = [Route]()
@@ -48,10 +50,10 @@ final class MetroController {
     private var minLat = 90.0
     private var maxLong = -180.0
     private var minLong = 180.0
-    
-    private var vehicleCount: Int {
-        return vehicles.count
-    }
+
+    private let defaultLong = -118.2365021
+    private let defaultLat  = 34.056219
+    private let defaultRadius : CLLocationDistance = 50000
 
     
     // MARK: - Singleton
@@ -63,6 +65,29 @@ final class MetroController {
     }
 }
 
+
+// MARK: - Helper
+
+private extension MetroController {
+    
+    func calculateMapProperties() {
+        resetMapProperties()
+        
+        vehicles.forEach() {
+            minLat  = $0.latitude  < minLat  ? $0.latitude : minLat
+            maxLat  = $0.latitude  > maxLat  ? $0.latitude : maxLat
+            minLong = $0.longitude < minLong ? $0.longitude : minLong
+            maxLong = $0.longitude > maxLong ? $0.longitude : maxLong
+        }
+    }
+
+    func resetMapProperties() {
+        maxLat = -90.0
+        minLat = 90.0
+        maxLong = -180.0
+        minLong = 180.0
+    }
+}
 
 // MARK: - Public API
 
@@ -84,13 +109,13 @@ extension MetroController {
             StrongSelf.vehicles = result.vehicles
             success()
         }, error: { error in
-                errorHandle(error)
+            errorHandle(error)
         })
     }
 }
 
 
-// MARK: - Private Function
+// MARK: - Private API
 
 private extension MetroController {
     
@@ -100,28 +125,5 @@ private extension MetroController {
     
     func vehicle(id: String, success : @escaping  (VehicleResponse)->Void , error errorCallback : @escaping  (String) -> Void) {
         service.vehicles(id: id, success: success, error: errorCallback)
-    }
-    
-    func calculateMapProperties() {
-        
-        maxLat = -90.0
-        minLat = 90.0
-        maxLong = -180.0
-        minLong = 180.0
-        
-        vehicles.forEach() {
-            if $0.latitude < minLat {
-                minLat = $0.latitude
-            }
-            if $0.latitude > maxLat {
-                maxLat = $0.latitude
-            }
-            if $0.longitude < minLong {
-                minLong = $0.longitude
-            }
-            if $0.longitude > maxLong {
-                maxLong = $0.longitude
-            }
-        }
     }
 }

@@ -22,7 +22,7 @@ class MetroService {
         self.init(api: MetroAPI())
     }
     
-    func vehicles(id: String, retryCount: Int = 3, responseQueue: DispatchQueue = .main, success :  @escaping (VehicleResponse)->Void, error errorCallback:  @escaping (String) -> Void)  {
+    func vehicles(id: String, retryCount: Int = 0, responseQueue: DispatchQueue = .main, success :  @escaping (VehicleResponse)->Void, error errorCallback:  @escaping (String) -> Void)  {
         
         let request = APIRequest(.get, path: "routes/\(id)/vehicles")
         
@@ -45,7 +45,7 @@ class MetroService {
         
     }
     
-    func route(retryCount: Int = 3, responseQueue: DispatchQueue = .main, success: @escaping (RouteResponse) -> Void, error errorCallback: @escaping (String) -> Void) {
+    func route(retryCount: Int = 0, responseQueue: DispatchQueue = .main, success: @escaping (RouteResponse) -> Void, error errorCallback: @escaping (String) -> Void) {
         
         let request = APIRequest(.get, path: "routes")
         

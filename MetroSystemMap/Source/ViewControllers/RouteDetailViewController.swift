@@ -2,7 +2,7 @@
 //  RouteDetailViewController.swift
 //  MetroSystemMap
 //
-//  Created by Joey Wei on 3/30/18.
+//  Created by Joey Wei on 8/7/18.
 //  Copyright © 2018 Joey Wei. All rights reserved.
 //
 
@@ -23,9 +23,10 @@ class RouteDetailViewController: UIViewController {
 
     // MARK: - Outlets
 
-    @IBOutlet private weak var refreshButton     : UIButton!
+    @IBOutlet private weak var refreshButton     : RoundButton!
     @IBOutlet private weak var backButton        : UIButton!
     @IBOutlet private weak var nameLabel         : UILabel!
+    @IBOutlet private weak var noVehicleLabel    : UILabel!
     @IBOutlet private weak var mapView           : MKMapView!
 
     // MARK: - Class Function
@@ -52,23 +53,24 @@ private extension RouteDetailViewController {
     
     func setupUserInterface() {
         refreshButton.setTitle(NSLocalizedString("Refresh", comment: "Refresh"), for: .normal)
+        refreshButton.buttonState = .inProgress
         backButton.setTitle(NSLocalizedString("Back", comment: "Back"), for: .normal)
+        noVehicleLabel.text = NSLocalizedString("No bus available", comment: "No bus available")
         nameLabel.text = route?.name
     }
     
     func loadMap(_ id: String) {
-//        loadingGuardView?.fadeIn()
         metroController.loadMap(for: id, success: { [weak self] in
             guard let StrongSelf = self else { return }
+            StrongSelf.noVehicleLabel.isHidden = StrongSelf.metroController.vehicleCount > 0
             StrongSelf.centerMap(on: StrongSelf.metroController.center, regionRadius: StrongSelf.metroController.regionRadius)
             StrongSelf.addAnnotations()
-//            StrongSelf.tableView?.reloadData()
-//            StrongSelf.loadingGuardView?.fadeOut()
+            StrongSelf.refreshButton.buttonState = .enabled
             },
          error: { [weak self] error in
             guard let StrongSelf = self else { return }
             StrongSelf.presentAlert(title: NSLocalizedString("Error", comment: "error alert title"), message: error)
-//            StrongSelf.loadingGuardView?.fadeOut()
+            StrongSelf.refreshButton.buttonState = .enabled
         })
     }
 }
@@ -105,6 +107,7 @@ private extension RouteDetailViewController {
     
     @IBAction func refresh(_ sender: Any) {
         guard let id = route?.id else { return }
+        refreshButton.buttonState = .inProgress
         loadMap(id)
     }
 }

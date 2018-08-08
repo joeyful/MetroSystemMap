@@ -17,7 +17,6 @@
 		BF691518211A246600C5CFE3 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF691514211A246500C5CFE3 /* UIView+Shadow.swift */; };
 		BF691519211A246600C5CFE3 /* String+PercentageEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF691515211A246600C5CFE3 /* String+PercentageEncoding.swift */; };
 		BF69151B211A249600C5CFE3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69151A211A249600C5CFE3 /* CardView.swift */; };
-		BF69151E211A250A00C5CFE3 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69151D211A250A00C5CFE3 /* ImageLoader.swift */; };
 		BF691520211A254E00C5CFE3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69151F211A254E00C5CFE3 /* API.swift */; };
 		BF691522211A256E00C5CFE3 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF691521211A256E00C5CFE3 /* APIRequest.swift */; };
 		BF691524211A25BF00C5CFE3 /* UITableView+AutoSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF691523211A25BF00C5CFE3 /* UITableView+AutoSize.swift */; };
@@ -28,6 +27,7 @@
 		BF691530211A630600C5CFE3 /* MetroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69152F211A630500C5CFE3 /* MetroController.swift */; };
 		BF691532211A653200C5CFE3 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF691531211A653200C5CFE3 /* Route.swift */; };
 		BF691534211AABF100C5CFE3 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF691533211AABF100C5CFE3 /* Vehicle.swift */; };
+		BF691536211ACAE900C5CFE3 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF691535211ACAE900C5CFE3 /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +43,6 @@
 		BF691514211A246500C5CFE3 /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		BF691515211A246600C5CFE3 /* String+PercentageEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+PercentageEncoding.swift"; sourceTree = "<group>"; };
 		BF69151A211A249600C5CFE3 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		BF69151D211A250A00C5CFE3 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		BF69151F211A254E00C5CFE3 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		BF691521211A256E00C5CFE3 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		BF691523211A25BF00C5CFE3 /* UITableView+AutoSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+AutoSize.swift"; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		BF69152F211A630500C5CFE3 /* MetroController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroController.swift; sourceTree = "<group>"; };
 		BF691531211A653200C5CFE3 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		BF691533211AABF100C5CFE3 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		BF691535211ACAE900C5CFE3 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +136,9 @@
 		BF69150D211A235800C5CFE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BF69152B211A5B2600C5CFE3 /* RouteListTableViewCell.swift */,
 				BF69151A211A249600C5CFE3 /* CardView.swift */,
+				BF691535211ACAE900C5CFE3 /* RoundButton.swift */,
+				BF69152B211A5B2600C5CFE3 /* RouteListTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,7 +195,6 @@
 			children = (
 				BF69151F211A254E00C5CFE3 /* API.swift */,
 				BF691521211A256E00C5CFE3 /* APIRequest.swift */,
-				BF69151D211A250A00C5CFE3 /* ImageLoader.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -283,6 +283,7 @@
 				BF69151B211A249600C5CFE3 /* CardView.swift in Sources */,
 				BF691516211A246600C5CFE3 /* UIView+Fade.swift in Sources */,
 				BF691518211A246600C5CFE3 /* UIView+Shadow.swift in Sources */,
+				BF691536211ACAE900C5CFE3 /* RoundButton.swift in Sources */,
 				BF691524211A25BF00C5CFE3 /* UITableView+AutoSize.swift in Sources */,
 				BF6914FA211A10D500C5CFE3 /* RouteListViewController.swift in Sources */,
 				BF69152C211A5B2700C5CFE3 /* RouteListTableViewCell.swift in Sources */,
@@ -291,7 +292,6 @@
 				BF69152E211A5E6000C5CFE3 /* RouteDetailViewController.swift in Sources */,
 				BF691532211A653200C5CFE3 /* Route.swift in Sources */,
 				BF6914F8211A10D500C5CFE3 /* AppDelegate.swift in Sources */,
-				BF69151E211A250A00C5CFE3 /* ImageLoader.swift in Sources */,
 				BF691520211A254E00C5CFE3 /* API.swift in Sources */,
 				BF691522211A256E00C5CFE3 /* APIRequest.swift in Sources */,
 				BF691517211A246600C5CFE3 /* UIViewController+PresentAlert.swift in Sources */,

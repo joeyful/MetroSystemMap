@@ -31,33 +31,33 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8h-W2-gih">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="121"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="337"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJ9-Q4-3wY" customClass="CardView" customModule="Reddit" customModuleProvider="target">
-                                                            <rect key="frame" x="15" y="20.5" width="345" height="80.5"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJ9-Q4-3wY" customClass="CardView" customModule="MetroSystemMap" customModuleProvider="target">
+                                                            <rect key="frame" x="15" y="20.5" width="345" height="296.5"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3vT-ep-7Or">
-                                                                    <rect key="frame" x="14.5" y="20.5" width="315.5" height="40"/>
+                                                                    <rect key="frame" x="14.5" y="20.5" width="315.5" height="256"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus" translatesAutoresizingMaskIntoConstraints="NO" id="eUW-Ip-M1L">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" secondItem="eUW-Ip-M1L" secondAttribute="height" id="bXZ-0H-ssR"/>
                                                                                 <constraint firstAttribute="width" constant="40" id="bh3-2J-Tnd"/>
                                                                             </constraints>
                                                                         </imageView>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJ1-2j-tu9">
-                                                                            <rect key="frame" x="40" y="0.0" width="8" height="40"/>
+                                                                            <rect key="frame" x="256" y="0.0" width="8" height="256"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="8" id="PQ8-I2-JIU"/>
                                                                             </constraints>
                                                                         </view>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pRm-7A-7fj">
-                                                                            <rect key="frame" x="48" y="0.0" width="267.5" height="40"/>
+                                                                            <rect key="frame" x="264" y="0.0" width="51.5" height="256"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200 Echo Park- Exposition Park Via Alvar" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPu-UU-Bvt">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="219.5" height="40"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="51.5" height="256"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="rU2-Ea-0Gf"/>
                                                                                     </constraints>
@@ -161,7 +161,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zl0-rD-6SI" customClass="CardView" customModule="Reddit" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zl0-rD-6SI" customClass="CardView" customModule="MetroSystemMap" customModuleProvider="target">
                                 <rect key="frame" x="12.5" y="32.5" width="350" height="622"/>
                                 <subviews>
                                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZeS-WY-kdA">
@@ -194,7 +194,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EU1-BT-BKl">
                                                 <rect key="frame" x="0.0" y="504" width="330" height="108"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbd-F2-XLa">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbd-F2-XLa" customClass="RoundButton" customModule="MetroSystemMap" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="0.0" width="290" height="50"/>
                                                         <color key="backgroundColor" red="0.99805396800000001" green="0.40894004699999997" blue="0.27080255749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -204,11 +204,6 @@
                                                         <state key="normal" title="Refresh">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="8"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="refresh:" destination="Lrr-NS-ybk" eventType="touchUpInside" id="r2w-Z4-cem"/>
                                                         </connections>
@@ -239,21 +234,29 @@
                                                     <constraint firstItem="Dbd-F2-XLa" firstAttribute="top" secondItem="EU1-BT-BKl" secondAttribute="top" id="oFU-3g-BeU"/>
                                                     <constraint firstAttribute="trailing" secondItem="Dbd-F2-XLa" secondAttribute="trailing" constant="20" id="vpt-LH-8MK"/>
                                                 </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="8"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                     </stackView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No bus available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3P-CY-ecx">
+                                        <rect key="frame" x="100" y="209.5" width="150" height="40"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="B7r-m3-qbs"/>
+                                            <constraint firstAttribute="height" constant="40" id="DSn-vD-6xN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ZeS-WY-kdA" secondAttribute="trailing" constant="10" id="EBX-OF-ncf"/>
                                     <constraint firstAttribute="bottom" secondItem="ZeS-WY-kdA" secondAttribute="bottom" id="UFw-Uy-w9P"/>
                                     <constraint firstItem="ZeS-WY-kdA" firstAttribute="top" secondItem="Zl0-rD-6SI" secondAttribute="top" constant="10" id="UNY-gG-Qos"/>
+                                    <constraint firstItem="h9P-y0-0fR" firstAttribute="centerX" secondItem="c3P-CY-ecx" secondAttribute="centerX" id="ZWL-N3-JYU"/>
                                     <constraint firstItem="ZeS-WY-kdA" firstAttribute="leading" secondItem="Zl0-rD-6SI" secondAttribute="leading" constant="10" id="dIZ-nj-pvc"/>
+                                    <constraint firstItem="c3P-CY-ecx" firstAttribute="centerY" secondItem="h9P-y0-0fR" secondAttribute="centerY" id="uR5-1L-Gee"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -272,6 +275,7 @@
                         <outlet property="backButton" destination="Z10-1B-pII" id="oZp-sz-rHl"/>
                         <outlet property="mapView" destination="h9P-y0-0fR" id="WGa-Xg-a2d"/>
                         <outlet property="nameLabel" destination="4L8-RU-hbY" id="0t2-gM-Pra"/>
+                        <outlet property="noVehicleLabel" destination="c3P-CY-ecx" id="Uca-gr-bqg"/>
                         <outlet property="refreshButton" destination="Dbd-F2-XLa" id="oD4-TA-baL"/>
                     </connections>
                 </viewController>
