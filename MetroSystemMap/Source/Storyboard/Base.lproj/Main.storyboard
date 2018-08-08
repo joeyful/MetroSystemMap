@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RedditTopListTV" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rpf-fW-Qps">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RedditTopListTV" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rpf-fW-Qps">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.95549887420000001" green="0.95622259379999996" blue="0.95561093090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -39,7 +39,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3vT-ep-7Or">
                                                                     <rect key="frame" x="14.5" y="20.5" width="315.5" height="40"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eUW-Ip-M1L">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus" translatesAutoresizingMaskIntoConstraints="NO" id="eUW-Ip-M1L">
                                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" secondItem="eUW-Ip-M1L" secondAttribute="height" id="bXZ-0H-ssR"/>
@@ -167,29 +167,9 @@
                                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZeS-WY-kdA">
                                         <rect key="frame" x="10" y="10" width="330" height="612"/>
                                         <subviews>
-                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xge-8H-d6a" customClass="ImageContentView" customModule="Reddit" customModuleProvider="target">
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="h9P-y0-0fR">
                                                 <rect key="frame" x="0.0" y="0.0" width="330" height="474"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u9m-Wr-z6I">
-                                                        <rect key="frame" x="0.0" y="0.0" width="330" height="474"/>
-                                                    </imageView>
-                                                </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="u9m-Wr-z6I" firstAttribute="width" secondItem="Xge-8H-d6a" secondAttribute="width" id="60O-xZ-uCn"/>
-                                                    <constraint firstItem="u9m-Wr-z6I" firstAttribute="height" secondItem="Xge-8H-d6a" secondAttribute="height" id="FsR-I2-TTf"/>
-                                                    <constraint firstItem="u9m-Wr-z6I" firstAttribute="centerY" secondItem="Xge-8H-d6a" secondAttribute="centerY" id="GBi-Zo-xAG"/>
-                                                    <constraint firstItem="u9m-Wr-z6I" firstAttribute="centerX" secondItem="Xge-8H-d6a" secondAttribute="centerX" id="mt0-QT-7bX"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="8"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <outlet property="imageView" destination="u9m-Wr-z6I" id="sSF-bZ-Ase"/>
-                                                </connections>
-                                            </view>
+                                            </mapView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jy7-OO-xeK">
                                                 <rect key="frame" x="0.0" y="474" width="330" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -215,6 +195,9 @@
                                                                 <integer key="value" value="8"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="refresh:" destination="Lrr-NS-ybk" eventType="touchUpInside" id="r2w-Z4-cem"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z10-1B-pII">
                                                         <rect key="frame" x="141.5" y="64" width="46" height="36"/>
@@ -228,6 +211,9 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="back:" destination="Lrr-NS-ybk" eventType="touchUpInside" id="5tx-qf-IgK"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -268,14 +254,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="h8X-gJ-ndi"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <connections>
-                        <outlet property="backButton" destination="Z10-1B-pII" id="EDa-zF-rgj"/>
-                        <outlet property="refreshButton" destination="Dbd-F2-XLa" id="qQS-UY-AqW"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bqb-Uu-fb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3302.898550724638" y="70.923913043478265"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bus" width="256" height="256"/>
+    </resources>
 </document>

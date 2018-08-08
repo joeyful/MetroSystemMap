@@ -10,9 +10,7 @@ import UIKit
 
 class RouteDetailViewController: UIViewController {
 
-    var name: String?
-
-    var uid: String? {
+    var route: Route? {
         didSet {
 
         }
@@ -23,7 +21,6 @@ class RouteDetailViewController: UIViewController {
 
     @IBOutlet private weak var refreshButton     : UIButton?
     @IBOutlet private weak var backButton        : UIButton?
-    @IBOutlet private weak var loadingGuardView  : UIView?
     
     // MARK: - Class Function
 

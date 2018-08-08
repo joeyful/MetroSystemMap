@@ -2,15 +2,11 @@
 //  RouteListTableViewCell.swift
 //  MetroSystemMap
 //
-//  Created by Joey Wei on 3/29/18.
+//  Created by Joey Wei on 8/7/18.
 //  Copyright © 2018 Joey Wei. All rights reserved.
 //
 
 import UIKit
-
-protocol RouteListTableViewCellDelegate: class {
-    func selectedRoute(on cell: RouteListTableViewCell)
-}
 
 class RouteListTableViewCell: UITableViewCell {
 
@@ -20,24 +16,7 @@ class RouteListTableViewCell: UITableViewCell {
         }
     }
     
-    weak var delegate : RouteListTableViewCellDelegate?
-    
     // MARK: - Outlets
     @IBOutlet private weak var titleLabel           : UILabel!
 
-    // MARK: - Life Cycle
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override func prepareForReuse() {
-        titleLabel.text = nil
-    }
-
-    // MARK: - Action
-
-    @IBAction func detail(_ button: UIButton) {
-        delegate?.selectedRoute(on: self)
-    }
 }

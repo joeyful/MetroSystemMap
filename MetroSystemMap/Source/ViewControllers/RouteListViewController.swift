@@ -21,8 +21,7 @@ class RouteListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupUserInterface()
+        tableView.autoSize()
         loadList()
         
     }
@@ -32,19 +31,11 @@ class RouteListViewController: UIViewController {
 
 private extension RouteListViewController {
     
-    func setupUserInterface() {
-        tableView.autoSize()
-    }
-    
-    func updateUserInterface() {
-        tableView?.reloadData()
-    }
-    
     func loadList() {
         loadingGuardView?.fadeIn()
         metroController.loadList(success: { [weak self] in
             guard let StrongSelf = self else { return }
-            StrongSelf.updateUserInterface()
+            StrongSelf.tableView?.reloadData()
             StrongSelf.loadingGuardView?.fadeOut()
         },
         error: { [weak self] error in
@@ -52,6 +43,14 @@ private extension RouteListViewController {
             StrongSelf.presentAlert(title: NSLocalizedString("Error", comment: "error alert title"), message: error)
             StrongSelf.loadingGuardView?.fadeOut()
         })
+    }
+    
+    func presentDetailView(route: Route) {
+        if let routeDetailViewController = RouteDetailViewController.buildFromStoryboard() {
+            routeDetailViewController.route = route
+            routeDetailViewController.modalTransitionStyle = .crossDissolve
+            present(routeDetailViewController, animated: true, completion: nil)
+        }
     }
 }
 
@@ -63,29 +62,21 @@ extension RouteListViewController: UITableViewDataSource {
         return metroController.listCount
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let route = metroController.routes[indexPath.row]
+        presentDetailView(route: route)
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RouteListTableViewCell", for: indexPath)
-        let routes = metroController.routes
         
-        if let routeCell = cell as? RouteListTableViewCell, indexPath.row < routes.count {
-            let route = routes[indexPath.row]
-            populate(routeCell, with: route)
+        if let routeCell = cell as? RouteListTableViewCell, indexPath.row < metroController.routes.count {
+            let route = metroController.routes[indexPath.row]
+            routeCell.route = route
         }
         
         return cell
     }
     
-    private func populate(_ cell: RouteListTableViewCell, with route: Route) {
-        cell.delegate = self
-        cell.route = route
-    }
-}
-
-// MARK: - RedditTopListTableViewCellDelegate
-
-extension RouteListViewController: RouteListTableViewCellDelegate {
-    func selectedRoute(on cell: RouteListTableViewCell) {
-//        guard let uid = cell.uid, let name = cell.name else { return }
-//        presentDetailView(uid: uid, name: name)
-    }
 }
